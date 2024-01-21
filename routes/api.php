@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'def-api'], function(){
-    Route::post('/users', [\App\Http\Controllers\DefController::class, 'index']);
+    Route::post('/users', [\App\Http\Controllers\DefController::class, 'post']);
+    Route::get('/users/get', [\App\Http\Controllers\DefController::class, 'get']);
+
 });
 

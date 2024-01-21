@@ -14,7 +14,15 @@ class DefController extends Controller
 //        dd(Auth::user());
     }
 
-    public function index(){
+    public function post(){
+        $data = \request()->validate([
+            'name' => 'string',
+            'login' => 'string'
+        ]);
+        return User::all();
+    }
+
+    public function get(){
         $data = \request()->validate([
             'name' => 'string',
             'login' => 'string'
